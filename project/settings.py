@@ -26,7 +26,7 @@ SECRET_KEY = '2su5n--i2b(6p^%7t70_-c76y_slmf6f1bn34^iq)364p92%qk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['contactsbook-fa.herokuapp.com/']
 
 
 # Application definition

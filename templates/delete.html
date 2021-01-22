@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style-delete.css' %}">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+	<title>Excluir Contato</title>
+</head>
+<body>
+
+	<div class="container">
+		<header class="hero">
+			<a href="{% url 'edit-contact' contact.id %}">
+				<i class="fas fa-chevron-circle-left back-btn"></i>
+			</a>
+			<div class="hero-info">
+				<h1 class="name">{{contact.name | title}}</h1>
+				<p class="relationship-hero">{{contact.relations | title}}</p>
+			</div>
+		</header>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<section class="delete-container">
+				<p>Deseja mesmo excluir este contato?</p>
+				<div class="delete-contact">
+					<i class="fas fa-trash delete-icon"></i>
+					<button type="submit" class="delete-button">Excluir</button>
+				</div>
+			</section>
+		</form>
+	</div>
+
+</body>
+</html>

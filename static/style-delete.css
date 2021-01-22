@@ -57,7 +57,7 @@ body{
 
 p{
 	padding-bottom: 2em;
-	color: #fff;
+	color: rgb(39, 39, 39);
 }
 
 .delete-container{
@@ -76,9 +76,9 @@ p{
 }
 
 .delete-button{
-	 background-color: #313438;
+	 background-color: #c9c9c9;
 	 border: none;
-	 color: #fff;
+	 color: rgb(26, 25, 25);
 	 font-size: 1.3em;
 	 padding-left: 1.5em;
 	 cursor: pointer;

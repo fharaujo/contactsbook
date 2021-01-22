@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path 
 
+# meus imports - import views
 from . import views
 
+# padrão de "caminhos" da urls 
 urlpatterns = [
     path('', views.index, name='index'),
     path('new-contact/', views.new_contact, name='new-contact'),

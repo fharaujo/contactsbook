@@ -2,8 +2,14 @@ from django.shortcuts import redirect, render
 
 from .models import Contacts
 
-# Create your views here.
+# Criação da lógica de representação das views.
+# OBS: Django traz uma nova maneira de trabalhar com as views 
+# que não foi usada neste aplicação. Chamadas de, classes => generic
+
+
 def index(request):
+    """Def index: Mostra a view index.html, buscando em contatos os seus respectivos campos.
+    Além de fazer a buscar por nome no campo search."""
     contacts = Contacts.objects.all()
     search = request.GET.get('search-area')
     if search:
@@ -15,6 +21,7 @@ def index(request):
 
 
 def new_contact(request):
+    """Def new_contact: lógica inserção no banco de dados"""
     if request.method == 'POST':
         new_contact = Contacts(
             name = request.POST['name'],
@@ -28,11 +35,13 @@ def new_contact(request):
 
 
 def contact_profile(request, pk):
+    """Def contact_profile: mostra os campos do contato que é passado por ID"""
     contact = Contacts.objects.get(id=pk)
     return render(request, 'contact-profile.html', {'contact': contact})
 
 
 def edit_contact(request, pk):
+    """def edit_contact: mostra o contato através do ID e dar opção de editar, trazendo os campos preenchidos com seus respectivos dados"""
     contact = Contacts.objects.get(id=pk)
 
     if request.method == 'POST':
@@ -47,6 +56,7 @@ def edit_contact(request, pk):
 
 
 def delete_contact(request, pk):
+    """def delete: excluir os dados do banco, buscando a partir do ID passado"""
     contact = Contacts.objects.get(id=pk)
     if request.method == 'POST':
         contact.delete()

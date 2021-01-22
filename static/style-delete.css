@@ -71,8 +71,8 @@ p{
 	align-items: center;
 	padding: 1em 2em;
 	border-radius: 20px;
-	box-shadow:  6px 6px 12px #2d2f33, 
-             -6px -6px 12px #35393d;
+	box-shadow:  3px 3px 2px #2d2f33, 
+             -3px -3px 2px #35393d;
 }
 
 .delete-button{
